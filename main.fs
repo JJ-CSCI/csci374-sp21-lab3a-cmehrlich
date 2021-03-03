@@ -60,13 +60,13 @@ let mileToMeter =
 
 // Define following weight unit transformations
 let ounceToGram v =
-    0.0 // write your code here
+    v * 28.349523125 // write your code here
 
 let poundToOunce p =
-    0.0 // write your code here
+    p * 16 // write your code here
 
 let shortTonToPound t =
-    0.0 // write your code here
+    t * 2000 // write your code here
 
 
 (*
