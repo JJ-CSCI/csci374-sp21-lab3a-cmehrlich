@@ -21,11 +21,11 @@ Use ONLY above functions and the forward pipe operator, `|>`,  to define the fol
 Forward pipe operator passes the result of the left side to the function on the right side.
 *)
 let yardToMillimeter y =
-    yardToFoot y |> footToInch |> inchToMillimeter // write your code here
+    y |> yardToFoot |> footToInch |> inchToMillimeter // write your code here
 
 // Define the curried function `divBy1000` that has the signature `float -> float -> float`
 let divBy1000 =
-     fun (x:float) ->x / 1000.0 // write your code here
+     fun x -> x / 1000.0 // write your code here
 
 (*
 Use ONLY above functions to define the following two functions. DO NOT CHANGE SIGNATURES!
@@ -34,7 +34,7 @@ let millimeterToMeter n =
     n |> divBy1000 // write your code here
 
 let meterToKilometer =
-    fun // write your code here
+    fun (x:float )-> divBy1000 x // write your code here
 
 (*
 Use above functions and function composition operator, `>>`, to define the following unit transformations
@@ -50,7 +50,7 @@ let inchToMeter =
     inchToMillimeter >> millimeterToMeter // write your code here
 
 let yardToKilometer =
-    fun (x:float)->x
+    fun (x:float)-> x
     yardToMillimeter >> millimeterToMeter >> divBy1000 // write your code here
 
 let mileToMeter =
