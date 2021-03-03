@@ -34,7 +34,7 @@ let millimeterToMeter n =
     n |> divBy1000 // write your code here
 
 let meterToKilometer =
-    fun (x:float )-> divBy1000 x // write your code here
+    fun (x:float ) -> divBy1000 x // write your code here
 
 (*
 Use above functions and function composition operator, `>>`, to define the following unit transformations
@@ -50,11 +50,12 @@ let inchToMeter =
     inchToMillimeter >> millimeterToMeter // write your code here
 
 let yardToKilometer =
-    fun (x:float)-> x
+    fun (x:float) -> x
     yardToMillimeter >> millimeterToMeter >> divBy1000 // write your code here
 
 let mileToMeter =
-    fun x->x // write your code here
+    fun (x:float)->x
+    mileToYard >> yardToMillimeter >> millimeterToMeter // write your code here
 
 
 // Define following weight unit transformations
